@@ -1,0 +1,25 @@
+<ol class="breadcrumb">
+    <li class="breadcrumb-item"><a href="/">Home</a></li>
+    <li class="breadcrumb-item active">Patrocinador</li>
+</ol>
+<h1 class="display-4">Patrocinador</h1>
+<form method="post" action="/patrocinador/update/<%= patrocinador.id %>">
+    <div class="form-group">
+        <label for="title">Nombre</label>
+        <input type="text" name="nombre" class="form-control" value="<%= patrocinador.nombre %>">
+    </div>
+    <div class="form-group">
+        <label for="url">Logo</label>
+        <input type="text" name="logo" class="form-control" value="<%= patrocinador.logo %>">
+    </div>
+    <div class="form-group">
+        <label for="color">Color</label>
+        <input type="text" name="color" class="form-control" value="<%= patrocinador.color %>">
+    </div>
+    <div class="form-group">
+        <label for="url">URL Página</label>
+        <input type="text" name="url" class="form-control" value="<%= patrocinador.url %>">
+    </div>
+
+    <input type="submit" value="Modificar" class="btn btn-primary">
+</form>

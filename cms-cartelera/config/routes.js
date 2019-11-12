@@ -26,6 +26,9 @@ module.exports.routes = {
     '/peliculas/delete/:id': { controller: 'PeliculasController', action: 'delete' },
     '/peliculas/edit/:id': { controller: 'PeliculasController', action: 'edit' },
     '/peliculas/update/:id': { controller: 'PeliculasController', action: 'update' },
+    '/patrocinador': { controller: 'PatrocinadorController', action: 'edit' },
+    '/patrocinador/create': { controller: 'PatrocinadorController', action: 'create' },
+    '/patrocinador/update/:id': { controller: 'PatrocinadorController', action: 'update' },
 
     /***************************************************************************
      *                                                                          *
