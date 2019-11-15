@@ -13,6 +13,12 @@ module.exports = {
         url: {
             type: 'string'
         },
+        fecha_inicio: {
+            type: 'string'
+        },
+        fecha_vencimiento: {
+            type: 'string'
+        },
 
     },
     datastore: 'mongodb'

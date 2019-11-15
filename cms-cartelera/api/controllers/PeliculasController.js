@@ -23,8 +23,10 @@ module.exports = {
     create: function(req, res) {
         var nombre = req.body.nombre;
         var url = req.body.url;
+        var fecha_inicio = req.body.fecha_inicio;
+        var fecha_vencimiento = req.body.fecha_vencimiento;
 
-        Peliculas.create({ nombre: nombre, url: url }).exec((err) => {
+        Peliculas.create({ nombre: nombre, url: url, fecha_inicio: fecha_inicio, fecha_vencimiento: fecha_vencimiento }).exec((err) => {
             if (err) {
                 res.send(500, { error: 'Error en Base de Datos' });
             } else {
@@ -58,8 +60,10 @@ module.exports = {
     update: function(req, res) {
         var nombre = req.body.nombre;
         var url = req.body.url;
+        var fecha_inicio = req.body.fecha_inicio;
+        var fecha_vencimiento = req.body.fecha_vencimiento;
 
-        Peliculas.update({ id: req.params.id }, { nombre: nombre, url: url }).exec((err) => {
+        Peliculas.update({ id: req.params.id }, { nombre: nombre, url: url, fecha_inicio: fecha_inicio, fecha_vencimiento: fecha_vencimiento }).exec((err) => {
             if (err) {
                 res.send(500, { error: 'Error en Base de Datos' });
             } else {
