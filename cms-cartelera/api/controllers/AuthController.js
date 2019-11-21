@@ -10,11 +10,11 @@ module.exports = {
     //Login function
     login: function(req, res) {
         passport.authenticate('local', function(err, user, info) {
-            if ((err) || (!user)) return res.send({ message: info.message, user });
+            if ((err) || (!user)) return res.redirect('/login');;
 
             req.login(user, function(err) {
                 if (err) res.send(err);
-                return res.redirect('/');
+                return res.redirect('/homepage');
             });
         })(req, res);
     },
@@ -37,7 +37,7 @@ module.exports = {
             req.login(user, function(err) {
                 if (err) return res.negotiate(err);
                 sails.log('User ' + user.id + ' has logged in.');
-                return res.redirect('/');
+                return res.redirect('/homepage');
             })
         })
     }

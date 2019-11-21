@@ -19,7 +19,8 @@ module.exports.routes = {
      *                                                                          *
      ***************************************************************************/
 
-    '/': { view: 'pages/homepage' },
+    '/': 'HomepageController.renderIndex',
+    '/homepage': { view: 'pages/homepage' },
     'GET /login': { view: 'user/login' },
     'GET /register': { view: 'user/register' },
     'POST /login': 'AuthController.login',
