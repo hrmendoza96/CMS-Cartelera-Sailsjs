@@ -1,25 +1,53 @@
-<ol class="breadcrumb">
-    <li class="breadcrumb-item"><a href="/">Home</a></li>
-    <li class="breadcrumb-item active">Patrocinador</li>
-</ol>
-<h1 class="display-4">Patrocinador</h1>
-<form method="post" action="/patrocinador/update/<%= patrocinador.id %>">
-    <div class="form-group">
-        <label for="title">Nombre</label>
-        <input type="text" name="nombre" class="form-control" value="<%= patrocinador.nombre %>">
-    </div>
-    <div class="form-group">
-        <label for="url">Logo</label>
-        <input type="text" name="logo" class="form-control" value="<%= patrocinador.logo %>">
-    </div>
-    <div class="form-group">
-        <label for="color">Color</label>
-        <input type="text" name="color" class="form-control" value="<%= patrocinador.color %>">
-    </div>
-    <div class="form-group">
-        <label for="url">URL Página</label>
-        <input type="text" name="url" class="form-control" value="<%= patrocinador.url %>">
-    </div>
+<nav class="navbar navbar-expand-sm navbar-dark bg-dark mb-4">
+    <a class="navbar-brand" href="/">CMS Cartelera</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                      <span class="navbar-toggler-icon"></span>
+                    </button>
 
-    <input type="submit" value="Modificar" class="btn btn-primary">
-</form>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav ml-auto">
+            <li class="nav-item active">
+                <a class="nav-link" href="/">Home <span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="/patrocinador">Patrocinador</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="/peliculas/list">Peliculas</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="/peliculas/add">Agregar Pelicula</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="/logout">Salir</a>
+            </li>
+        </ul>
+    </div>
+</nav>
+<div class="container">
+    <ol class="breadcrumb">
+        <li class="breadcrumb-item"><a href="/">Home</a></li>
+        <li class="breadcrumb-item active">Patrocinador</li>
+    </ol>
+    <h1 class="display-4">Patrocinador</h1>
+    <form method="post" action="/patrocinador/update/<%= patrocinador.id %>">
+        <div class="form-group">
+            <label for="title">Nombre</label>
+            <input type="text" name="nombre" class="form-control" value="<%= patrocinador.nombre %>">
+        </div>
+        <div class="form-group">
+            <label for="url">Logo</label>
+            <input type="text" name="logo" class="form-control" value="<%= patrocinador.logo %>">
+        </div>
+        <div class="form-group">
+            <label for="color">Color</label>
+            <input type="text" name="color" class="form-control" value="<%= patrocinador.color %>">
+        </div>
+        <div class="form-group">
+            <label for="url">URL Página</label>
+            <input type="text" name="url" class="form-control" value="<%= patrocinador.url %>">
+        </div>
+
+        <input type="submit" value="Modificar" class="btn btn-primary">
+    </form>
+</div>

@@ -20,6 +20,11 @@ module.exports.routes = {
      ***************************************************************************/
 
     '/': { view: 'pages/homepage' },
+    'GET /login': { view: 'user/login' },
+    'GET /register': { view: 'user/register' },
+    'POST /login': 'AuthController.login',
+    'POST /register': 'AuthController.register',
+    '/logout': 'AuthController.logout',
     '/peliculas/list': { controller: 'PeliculasController', action: 'list' },
     '/peliculas/add': { controller: 'PeliculasController', action: 'add' },
     '/peliculas/create': { controller: 'PeliculasController', action: 'create' },
