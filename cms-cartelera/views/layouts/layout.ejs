@@ -11,6 +11,7 @@
         <%/* <meta name="robots" content="noindex"> */%>
 
             <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+            <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery-datetimepicker/2.5.20/jquery.datetimepicker.min.css" />
             <!--STYLES-->
             <link rel="stylesheet" href="/styles/importer.css">
             <!--STYLES END-->
@@ -28,6 +29,23 @@
         <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.15.0/umd/popper.js" integrity="sha256-7BfFV/dSvQT4pGBvRAIt6JDXsehb92DQqpGUndLCPQ4=" crossorigin="anonymous"></script>
         <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-datetimepicker/2.5.20/jquery.datetimepicker.full.min.js"></script>
+        <script>
+            $('#picker_inicio').datetimepicker({
+                    timepicker: false,
+                    datepciker: true,
+                    format: 'd/m/Y',
+                    value: 'DD/MM/YYYY',
+                    weeks: true
+                }),
+                $('#picker_vencimiento').datetimepicker({
+                    timepicker: false,
+                    datepciker: true,
+                    format: 'd/m/Y',
+                    value: 'DD/MM/YYYY',
+                    weeks: true
+                })
+        </script>
 </body>
 
 </html>
