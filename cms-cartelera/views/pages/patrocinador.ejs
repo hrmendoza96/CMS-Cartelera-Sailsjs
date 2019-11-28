@@ -37,17 +37,55 @@
         </div>
         <div class="form-group">
             <label for="url">Logo</label>
-            <input type="text" name="logo" class="form-control" value="<%= patrocinador.logo %>">
+            <input type="url" pattern="https?://.+" name="logo" class="form-control" value="<%= patrocinador.logo %>">
         </div>
         <div class="form-group">
-            <label for="color">Color</label>
-            <input type="text" name="color" class="form-control" value="<%= patrocinador.color %>">
+            <label for="color">Color (Hexadecimal)</label>
+            <div class="color-picker"></div>
+            <input id="input-color" type="text" name="color" class="form-control" value="<%= patrocinador.color %>">
         </div>
         <div class="form-group">
             <label for="url">URL Página</label>
-            <input type="text" name="url" class="form-control" value="<%= patrocinador.url %>">
+            <input type="url" pattern="https?://.+" name="url" class="form-control" value="<%= patrocinador.url %>">
         </div>
 
         <input type="submit" value="Modificar" class="btn btn-primary">
     </form>
 </div>
+<script src="https://cdn.jsdelivr.net/npm/@simonwep/pickr/dist/pickr.min.js"></script>
+<script>
+    const pickr = Pickr.create({
+        el: '.color-picker',
+        theme: 'monolith', // or 'monolith', or 'nano'
+
+        components: {
+
+            // Main components
+            preview: false,
+            opacity: false,
+            hue: true,
+
+            // Input / output Options
+            interaction: {
+                hex: true,
+                rgba: false,
+                hsla: false,
+                hsva: false,
+                cmyk: false,
+                input: true,
+                clear: false,
+                save: false
+            }
+        }
+    });
+    let input = document.getElementById('input-color');
+
+    pickr.on('init', instance => {
+        pickr.setColor(input.value, false);
+        //console.log('init', instance._color.toHEXA());
+    }).on('change', (color, instance) => {
+        //console.log("#" + color.toHEXA()[0] + color.toHEXA()[1] + color.toHEXA()[2]);
+        input.value = "#" + color.toHEXA()[0] + color.toHEXA()[1] + color.toHEXA()[2];
+        pickr.setColor(input.value, false);
+    });
+</script>
